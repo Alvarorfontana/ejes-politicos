@@ -5,12 +5,15 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Eje Político - Portal de Noticias</title>
 
-  <!-- META ETIQUETAS PARA COMPARTIR EN WHATSAPP Y REDES SOCIALES (OPEN GRAPH) -->
+  <!-- META ETIQUETAS OPEN GRAPH PARA PREVISUALIZACIÓN EN WHATSAPP Y REDES -->
   <meta property="og:type" content="website">
-  <meta property="og:url" content="https://ejes-politicos.vercel.app/index.html">
+  <meta property="og:site_name" content="Eje Político">
+  <meta property="og:url" content="https://ejes-politicos.vercel.app/">
   <meta property="og:title" content="Eje Político | Análisis y Noticias">
   <meta property="og:description" content="Información y análisis político y económico de alcance regional.">
-  <meta property="og:image" content="https://images.unsplash.com/photo-1540910419892-4a36d2c3266c?auto=format&fit=crop&w=1200&q=80">
+  <meta property="og:image" content="https://images.unsplash.com/photo-1540910419892-4a36d2c3266c?auto=format&fit=crop&w=1200&h=630&q=80">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
 
   <script src="https://cdn.tailwindcss.com"></script>
 </head>
@@ -64,11 +67,11 @@
         </article>
       </section>
 
-      <!-- COLUMNA 2: CENTRAL / FOTO PRINCIPAL CON "ÚLTIMO MOMENTO" -->
+      <!-- COLUMNA 2: CENTRAL / FOTO PRINCIPAL CON CARTEL "ÚLTIMO MOMENTO" -->
       <section class="lg:col-span-6 px-0 lg:px-6 pt-6 lg:pt-0">
         <article>
-          <!-- Indicador "ÚLTIMO MOMENTO" con punto titilante en rojo -->
-          <div class="inline-flex items-center gap-2 bg-red-700 text-white px-2.5 py-1 text-[11px] font-bold uppercase tracking-wider mb-3">
+          <!-- Cartel "ÚLTIMO MOMENTO" en rojo con texto en blanco y animación -->
+          <div class="inline-flex items-center gap-2 bg-red-700 text-white px-2.5 py-1 text-[11px] font-bold uppercase tracking-wider mb-3 shadow-sm">
             <span class="text-base font-extrabold leading-none animate-spin">*</span>
             <span>Último Momento</span>
             <span class="w-2 h-2 rounded-full bg-white animate-ping ml-1"></span>
@@ -168,7 +171,7 @@
           document.getElementById('col3-firma2').innerText = `${d.col3.nota2.autor || ''} | ${d.col3.nota2.lugar || ''}`;
         }
       })
-      .catch(err => console.error("Error cargando portada:", err));
+      .catch(err => console.error("Error cargando la portada:", err));
   </script>
 </body>
 </html>
