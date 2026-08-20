@@ -1,1 +1,24 @@
+backend:
+  name: github
+  repo: TU_USUARIO_GITHUB/NOMBRE_DE_TU_REPOSITORIO
+  branch: main
 
+media_folder: "images/uploads"
+public_folder: "/images/uploads"
+
+collections:
+  - name: "articulos"
+    label: "Artículos / Notas"
+    folder: "content/articulos"
+    create: true
+    slug: "{{year}}-{{month}}-{{day}}-{{slug}}"
+    fields:
+      - { label: "Título", name: "title", widget: "string" }
+      - { label: "Volanta", name: "volanta", widget: "string" }
+      - { label: "Bajada", name: "bajada", widget: "text" }
+      - { label: "Categoría", name: "categoria", widget: "select", options: ["Europa", "EE UU", "México", "Latinoamérica", "Oriente", "Asia", "África", "Historias de corresponsal", "Últimas noticias"] }
+      - { label: "Imagen Principal", name: "imagen", widget: "image" }
+      - { label: "Epígrafe de la Foto", name: "epigrafe", widget: "string" }
+      - { label: "Autor", name: "autor", widget: "string", default: "Redacción Eje Político" }
+      - { label: "Fecha", name: "fecha", widget: "datetime" }
+      - { label: "Cuerpo del Artículo", name: "body", widget: "markdown" }
