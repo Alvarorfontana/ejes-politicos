@@ -1,6 +1,6 @@
 backend:
   name: github
-  repo: https://github.com/Alvarorfontana/contextos.politicos
+  repo:Alvarorfontana/eje-politico
   branch: main
 
 media_folder: "images/uploads"
