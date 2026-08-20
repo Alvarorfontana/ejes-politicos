@@ -8,18 +8,32 @@
 </head>
 <body class="bg-white text-gray-900 font-sans min-h-screen">
 
-  <!-- Navegación Superior -->
+  <!-- CABECERA DEL DIARIO -->
   <header class="border-b border-gray-300 bg-white">
+    <!-- Barra superior con edición/fecha -->
+    <div class="max-w-7xl mx-auto px-4 py-2 flex justify-between items-center border-b border-gray-200 text-[10px] text-gray-500 uppercase tracking-widest font-serif">
+      <span>Jueves, 20 de Agosto de 2026</span>
+      <span class="font-bold text-red-700">Edición América</span>
+    </div>
+
+    <!-- Marca / Título Principal del Portal -->
+    <div class="text-center py-6 border-b border-gray-200">
+      <a href="index.html" id="site-name" class="font-serif text-5xl md:text-7xl font-black uppercase tracking-tighter hover:opacity-90 transition-opacity">
+        Eje Político
+      </a>
+    </div>
+
+    <!-- Menú de Categorías -->
     <nav class="max-w-7xl mx-auto px-4 overflow-x-auto">
       <ul id="categories-list" class="flex items-center justify-between md:justify-start md:space-x-8 py-3 text-[11px] font-bold text-gray-800 whitespace-nowrap uppercase tracking-wider"></ul>
     </nav>
   </header>
 
-  <!-- Portada / Grid de 3 Columnas -->
+  <!-- PORTADA / GRID DE 3 COLUMNAS -->
   <main class="max-w-7xl mx-auto px-4 py-6">
     <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 divide-y lg:divide-y-0 lg:divide-x divide-gray-200">
       
-      <!-- COLUMNA 1: IZQUIERDA (4 de 12) -->
+      <!-- COLUMNA 1: IZQUIERDA (3 de 12) -->
       <section class="lg:col-span-3 pr-0 lg:pr-6 space-y-6">
         <!-- Nota Principal Izquierda -->
         <article class="border-b border-gray-200 pb-6">
@@ -47,7 +61,7 @@
         </article>
       </section>
 
-      <!-- COLUMNA 2: CENTRAL / FOTO PRINCIPAL (5 de 12) -->
+      <!-- COLUMNA 2: CENTRAL / FOTO PRINCIPAL (6 de 12) -->
       <section class="lg:col-span-6 px-0 lg:px-6 pt-6 lg:pt-0">
         <article>
           <!-- Imagen Rectangular Principal -->
@@ -97,11 +111,14 @@
     </div>
   </main>
 
-  <!-- Script de carga desde data.json -->
   <script>
     fetch('data.json')
       .then(res => res.json())
       .then(data => {
+        if (data.siteName) {
+          document.getElementById('site-name').innerText = data.siteName;
+        }
+
         // Categorías
         document.getElementById('categories-list').innerHTML = data.categories.map(c => `<li><a href="#" class="hover:text-red-700">${c}</a></li>`).join('');
 
