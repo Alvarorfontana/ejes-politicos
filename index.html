@@ -5,27 +5,180 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Eje Político - Portal de Noticias</title>
 
-  <!-- METAETIQUETAS OPEN GRAPH OPTIMIZADAS PARA WHATSAPP -->
+  <!-- METAETIQUETAS OPEN GRAPH PARA WHATSAPP Y REDES SOCIALES -->
   <meta property="og:type" content="website">
   <meta property="og:site_name" content="Eje Político">
   <meta property="og:url" content="https://ejes-politicos.vercel.app/">
   <meta property="og:title" content="El pasado oscuro de la guerra en Colombia emerge en los cementerios">
   <meta property="og:description" content="La Unidad de Búsqueda recupera restos e indumentaria militar en Roldanillo tras el terremoto.">
-  <meta property="og:image" content="https://images.unsplash.com/photo-1540910419892-4a36d2c3266c?auto=format&fit=crop&w=1200&h=630&q=70">
-  <meta property="og:image:secure_url" content="https://images.unsplash.com/photo-1540910419892-4a36d2c3266c?auto=format&fit=crop&w=1200&h=630&q=70">
+  <meta property="og:image" content="https://images.unsplash.com/photo-1540910419892-4a36d2c3266c?auto=format&fit=crop&w=1200&h=630&q=80">
+  <meta property="og:image:secure_url" content="https://images.unsplash.com/photo-1540910419892-4a36d2c3266c?auto=format&fit=crop&w=1200&h=630&q=80">
   <meta property="og:image:type" content="image/jpeg">
   <meta property="og:image:width" content="1200">
   <meta property="og:image:height" content="630">
 
-  <!-- METAETIQUETAS TWITTER CARDS DE RESPALDO -->
+  <!-- METAETIQUETAS TWITTER CARDS (RESPALDO PARA WHATSAPP) -->
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:title" content="El pasado oscuro de la guerra en Colombia emerge en los cementerios">
   <meta name="twitter:description" content="La Unidad de Búsqueda recupera restos e indumentaria militar en Roldanillo tras el terremoto.">
-  <meta name="twitter:image" content="https://images.unsplash.com/photo-1540910419892-4a36d2c3266c?auto=format&fit=crop&w=1200&h=630&q=70">
+  <meta name="twitter:image" content="https://images.unsplash.com/photo-1540910419892-4a36d2c3266c?auto=format&fit=crop&w=1200&h=630&q=80">
 
   <script src="https://cdn.tailwindcss.com"></script>
 </head>
 <body class="bg-white text-gray-900 font-sans min-h-screen">
-  <!-- El resto del contenido de tu index.html se mantiene igual -->
+
+  <!-- CABECERA DEL DIARIO -->
+  <header class="border-b border-gray-300 bg-white">
+    <div class="max-w-7xl mx-auto px-4 py-2 flex justify-between items-center border-b border-gray-200 text-[10px] text-gray-500 uppercase tracking-widest font-serif">
+      <span id="fecha-actual">Jueves, 20 de Agosto de 2026</span>
+      <span class="font-bold text-red-700">Edición América</span>
+    </div>
+
+    <div class="text-center py-6 border-b border-gray-200">
+      <a href="index.html" id="site-name" class="font-serif text-5xl md:text-7xl font-black uppercase tracking-tighter hover:opacity-90 transition-opacity">
+        Eje Político
+      </a>
+    </div>
+
+    <nav class="max-w-7xl mx-auto px-4 overflow-x-auto">
+      <ul id="categories-list" class="flex items-center justify-between md:justify-start md:space-x-8 py-3 text-[11px] font-bold text-gray-800 whitespace-nowrap uppercase tracking-wider"></ul>
+    </nav>
+  </header>
+
+  <!-- PORTADA / GRID DE 3 COLUMNAS -->
+  <main class="max-w-7xl mx-auto px-4 py-6">
+    <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 divide-y lg:divide-y-0 lg:divide-x divide-gray-200">
+      
+      <!-- COLUMNA 1: IZQUIERDA -->
+      <section class="lg:col-span-3 pr-0 lg:pr-6 space-y-6">
+        <article class="border-b border-gray-200 pb-6">
+          <a href="articulo.html?id=2" class="group">
+            <h2 id="col1-tit1" class="font-serif text-2xl md:text-3xl font-bold leading-tight text-gray-900 group-hover:text-red-700 mb-2"></h2>
+          </a>
+          <p id="col1-firma1" class="text-[11px] text-gray-500 font-serif mb-2"></p>
+          <p id="col1-bajada1" class="text-xs text-gray-600 font-serif leading-relaxed mb-3"></p>
+          <div class="border-t border-gray-200 pt-2 flex items-start gap-1">
+            <span class="text-gray-400 font-bold">—</span>
+            <p id="col1-vineta1" class="text-xs font-bold font-serif text-gray-900"></p>
+          </div>
+        </article>
+
+        <article>
+          <a href="articulo.html?id=2" class="group">
+            <h3 id="col1-tit2" class="font-serif text-lg font-bold leading-snug text-gray-900 group-hover:text-red-700 mb-1"></h3>
+          </a>
+          <p id="col1-firma2" class="text-[11px] text-gray-500 font-serif mb-2"></p>
+          <div class="border-t border-gray-200 pt-2 flex items-start gap-1">
+            <span class="text-gray-400 font-bold">—</span>
+            <p id="col1-vineta2" class="text-xs font-serif text-gray-700"></p>
+          </div>
+        </article>
+      </section>
+
+      <!-- COLUMNA 2: CENTRAL CON CARTEL Y FOTO -->
+      <section class="lg:col-span-6 px-0 lg:px-6 pt-6 lg:pt-0">
+        <article>
+          <div class="inline-flex items-center gap-2 bg-red-700 text-white px-2.5 py-1 text-[11px] font-bold uppercase tracking-wider mb-3 shadow-sm">
+            <span class="text-base font-extrabold leading-none animate-spin">*</span>
+            <span>Último Momento</span>
+            <span class="w-2 h-2 rounded-full bg-white animate-ping ml-1"></span>
+          </div>
+
+          <div class="relative aspect-[16/9] w-full overflow-hidden bg-gray-100 mb-2">
+            <img id="col2-img" src="" alt="" class="w-full h-full object-cover">
+          </div>
+          <figcaption id="col2-epigrafe" class="text-[10px] text-gray-500 font-serif text-right mb-4"></figcaption>
+
+          <a href="articulo.html?id=1" id="col2-link" class="group">
+            <h1 id="col2-tit" class="font-serif text-3xl md:text-4xl font-bold leading-tight text-gray-900 group-hover:text-red-700 mb-3"></h1>
+          </a>
+          <p id="col2-firma" class="text-[11px] text-gray-500 font-serif mb-3 uppercase"></p>
+          <p id="col2-bajada" class="text-sm text-gray-600 font-serif leading-relaxed mb-4"></p>
+          
+          <div class="border-t border-gray-200 pt-3 flex items-start gap-1">
+            <span class="text-gray-400 font-bold">—</span>
+            <p id="col2-vineta" class="text-xs font-bold font-serif text-gray-900"></p>
+          </div>
+        </article>
+      </section>
+
+      <!-- COLUMNA 3: DERECHA -->
+      <section class="lg:col-span-3 pl-0 lg:pl-6 pt-6 lg:pt-0 space-y-6">
+        <article class="border-b border-gray-200 pb-6">
+          <div class="relative aspect-[16/9] w-full overflow-hidden bg-gray-100 mb-2">
+            <img id="col3-img" src="" alt="" class="w-full h-full object-cover">
+          </div>
+          <figcaption id="col3-epigrafe" class="text-[10px] text-gray-500 font-serif mb-3"></figcaption>
+
+          <a href="articulo.html?id=3" class="group">
+            <h3 id="col3-tit1" class="font-serif text-xl font-bold leading-snug text-gray-900 group-hover:text-red-700 mb-2"></h3>
+          </a>
+          <p id="col3-firma1" class="text-[11px] text-gray-500 font-serif mb-2 uppercase"></p>
+          <p id="col3-bajada1" class="text-xs text-gray-600 font-serif leading-relaxed"></p>
+        </article>
+
+        <article>
+          <a href="articulo.html?id=3" class="group">
+            <h3 id="col3-tit2" class="font-serif text-lg font-bold leading-snug text-gray-900 group-hover:text-red-700 mb-2"></h3>
+          </a>
+          <p id="col3-firma2" class="text-[11px] text-gray-500 font-serif uppercase"></p>
+        </article>
+      </section>
+
+    </div>
+  </main>
+
+  <script>
+    fetch('data.json')
+      .then(res => res.json())
+      .then(data => {
+        if (data.siteName) document.getElementById('site-name').innerText = data.siteName;
+
+        if (data.categories) {
+          document.getElementById('categories-list').innerHTML = data.categories.map(c => `<li><a href="#" class="hover:text-red-700">${c}</a></li>`).join('');
+        }
+
+        const d = data.homeData || {};
+
+        if (d.col1 && d.col1.nota1) {
+          document.getElementById('col1-tit1').innerText = d.col1.nota1.titulo || '';
+          document.getElementById('col1-firma1').innerText = `${d.col1.nota1.autor || ''} | ${d.col1.nota1.lugar || ''}`;
+          document.getElementById('col1-bajada1').innerText = d.col1.nota1.bajada || '';
+          document.getElementById('col1-vineta1').innerText = d.col1.nota1.vineta || '';
+        }
+
+        if (d.col1 && d.col1.nota2) {
+          document.getElementById('col1-tit2').innerText = d.col1.nota2.titulo || '';
+          document.getElementById('col1-firma2').innerText = `${d.col1.nota2.autor || ''} | ${d.col1.nota2.lugar || ''}`;
+          document.getElementById('col1-vineta2').innerText = d.col1.nota2.vineta || '';
+        }
+
+        if (d.col2) {
+          document.getElementById('col2-img').src = d.col2.imagen || '';
+          document.getElementById('col2-epigrafe').innerText = `${d.col2.epigrafe || ''} ${d.col2.creditosFoto || ''}`;
+          document.getElementById('col2-tit').innerText = d.col2.titulo || '';
+          document.getElementById('col2-firma').innerText = `${d.col2.autor || ''} | ${d.col2.lugar || ''}`;
+          document.getElementById('col2-bajada').innerText = d.col2.bajada || '';
+          document.getElementById('col2-vineta').innerText = d.col2.vineta || '';
+          
+          const link = document.getElementById('col2-link');
+          if (link) link.href = `articulo.html?id=${d.col2.id || 1}`;
+        }
+
+        if (d.col3 && d.col3.nota1) {
+          document.getElementById('col3-img').src = d.col3.nota1.imagen || '';
+          document.getElementById('col3-epigrafe').innerText = d.col3.nota1.epigrafe || '';
+          document.getElementById('col3-tit1').innerText = d.col3.nota1.titulo || '';
+          document.getElementById('col3-firma1').innerText = `${d.col3.nota1.autor || ''} | ${d.col3.nota1.lugar || ''}`;
+          document.getElementById('col3-bajada1').innerText = d.col3.nota1.bajada || '';
+        }
+
+        if (d.col3 && d.col3.nota2) {
+          document.getElementById('col3-tit2').innerText = d.col3.nota2.titulo || '';
+          document.getElementById('col3-firma2').innerText = `${d.col3.nota2.autor || ''} | ${d.col3.nota2.lugar || ''}`;
+        }
+      })
+      .catch(err => console.error("Error cargando la portada:", err));
+  </script>
 </body>
 </html>
