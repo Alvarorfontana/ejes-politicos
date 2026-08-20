@@ -3,27 +3,32 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Eje Político</title>
+  <title>Eje Político - Portal de Noticias</title>
+
+  <!-- META ETIQUETAS PARA COMPARTIR EN WHATSAPP Y REDES SOCIALES (OPEN GRAPH) -->
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://ejes-politicos.vercel.app/index.html">
+  <meta property="og:title" content="Eje Político | Análisis y Noticias">
+  <meta property="og:description" content="Información y análisis político y económico de alcance regional.">
+  <meta property="og:image" content="https://images.unsplash.com/photo-1540910419892-4a36d2c3266c?auto=format&fit=crop&w=1200&q=80">
+
   <script src="https://cdn.tailwindcss.com"></script>
 </head>
 <body class="bg-white text-gray-900 font-sans min-h-screen">
 
   <!-- CABECERA DEL DIARIO -->
   <header class="border-b border-gray-300 bg-white">
-    <!-- Barra superior con edición/fecha -->
     <div class="max-w-7xl mx-auto px-4 py-2 flex justify-between items-center border-b border-gray-200 text-[10px] text-gray-500 uppercase tracking-widest font-serif">
       <span id="fecha-actual">Jueves, 20 de Agosto de 2026</span>
       <span class="font-bold text-red-700">Edición América</span>
     </div>
 
-    <!-- Marca / Título Principal del Portal -->
     <div class="text-center py-6 border-b border-gray-200">
       <a href="index.html" id="site-name" class="font-serif text-5xl md:text-7xl font-black uppercase tracking-tighter hover:opacity-90 transition-opacity">
         Eje Político
       </a>
     </div>
 
-    <!-- Menú de Categorías -->
     <nav class="max-w-7xl mx-auto px-4 overflow-x-auto">
       <ul id="categories-list" class="flex items-center justify-between md:justify-start md:space-x-8 py-3 text-[11px] font-bold text-gray-800 whitespace-nowrap uppercase tracking-wider"></ul>
     </nav>
@@ -35,7 +40,6 @@
       
       <!-- COLUMNA 1: IZQUIERDA (3 de 12) -->
       <section class="lg:col-span-3 pr-0 lg:pr-6 space-y-6">
-        <!-- Nota Principal Izquierda -->
         <article class="border-b border-gray-200 pb-6">
           <a href="articulo.html?id=2" class="group">
             <h2 id="col1-tit1" class="font-serif text-2xl md:text-3xl font-bold leading-tight text-gray-900 group-hover:text-red-700 mb-2"></h2>
@@ -48,7 +52,6 @@
           </div>
         </article>
 
-        <!-- Nota Secundaria Izquierda -->
         <article>
           <a href="articulo.html?id=2" class="group">
             <h3 id="col1-tit2" class="font-serif text-lg font-bold leading-snug text-gray-900 group-hover:text-red-700 mb-1"></h3>
@@ -61,10 +64,16 @@
         </article>
       </section>
 
-      <!-- COLUMNA 2: CENTRAL / FOTO PRINCIPAL (6 de 12) -->
+      <!-- COLUMNA 2: CENTRAL / FOTO PRINCIPAL CON "ÚLTIMO MOMENTO" -->
       <section class="lg:col-span-6 px-0 lg:px-6 pt-6 lg:pt-0">
         <article>
-          <!-- Imagen Rectangular Principal -->
+          <!-- Indicador "ÚLTIMO MOMENTO" con punto titilante en rojo -->
+          <div class="inline-flex items-center gap-2 bg-red-700 text-white px-2.5 py-1 text-[11px] font-bold uppercase tracking-wider mb-3">
+            <span class="text-base font-extrabold leading-none animate-spin">*</span>
+            <span>Último Momento</span>
+            <span class="w-2 h-2 rounded-full bg-white animate-ping ml-1"></span>
+          </div>
+
           <div class="relative aspect-[16/9] w-full overflow-hidden bg-gray-100 mb-2">
             <img id="col2-img" src="" alt="" class="w-full h-full object-cover">
           </div>
@@ -85,7 +94,6 @@
 
       <!-- COLUMNA 3: DERECHA (3 de 12) -->
       <section class="lg:col-span-3 pl-0 lg:pl-6 pt-6 lg:pt-0 space-y-6">
-        <!-- Nota Derecha con Foto Mediana -->
         <article class="border-b border-gray-200 pb-6">
           <div class="relative aspect-[16/9] w-full overflow-hidden bg-gray-100 mb-2">
             <img id="col3-img" src="" alt="" class="w-full h-full object-cover">
@@ -99,7 +107,6 @@
           <p id="col3-bajada1" class="text-xs text-gray-600 font-serif leading-relaxed"></p>
         </article>
 
-        <!-- Nota Derecha Inferior -->
         <article>
           <a href="articulo.html?id=3" class="group">
             <h3 id="col3-tit2" class="font-serif text-lg font-bold leading-snug text-gray-900 group-hover:text-red-700 mb-2"></h3>
@@ -113,26 +120,16 @@
 
   <script>
     fetch('data.json')
-      .then(res => {
-        if (!res.ok) throw new Error("No se pudo cargar data.json");
-        return res.json();
-      })
+      .then(res => res.json())
       .then(data => {
-        if (data.siteName) {
-          const siteElem = document.getElementById('site-name');
-          if (siteElem) siteElem.innerText = data.siteName;
-        }
+        if (data.siteName) document.getElementById('site-name').innerText = data.siteName;
 
         if (data.categories) {
-          const catElem = document.getElementById('categories-list');
-          if (catElem) {
-            catElem.innerHTML = data.categories.map(c => `<li><a href="#" class="hover:text-red-700">${c}</a></li>`).join('');
-          }
+          document.getElementById('categories-list').innerHTML = data.categories.map(c => `<li><a href="#" class="hover:text-red-700">${c}</a></li>`).join('');
         }
 
         const d = data.homeData || {};
 
-        // Columna 1
         if (d.col1 && d.col1.nota1) {
           document.getElementById('col1-tit1').innerText = d.col1.nota1.titulo || '';
           document.getElementById('col1-firma1').innerText = `${d.col1.nota1.autor || ''} | ${d.col1.nota1.lugar || ''}`;
@@ -146,7 +143,6 @@
           document.getElementById('col1-vineta2').innerText = d.col1.nota2.vineta || '';
         }
 
-        // Columna 2 (Central)
         if (d.col2) {
           document.getElementById('col2-img').src = d.col2.imagen || '';
           document.getElementById('col2-epigrafe').innerText = `${d.col2.epigrafe || ''} ${d.col2.creditosFoto || ''}`;
@@ -159,7 +155,6 @@
           if (link) link.href = `articulo.html?id=${d.col2.id || 1}`;
         }
 
-        // Columna 3
         if (d.col3 && d.col3.nota1) {
           document.getElementById('col3-img').src = d.col3.nota1.imagen || '';
           document.getElementById('col3-epigrafe').innerText = d.col3.nota1.epigrafe || '';
@@ -173,9 +168,7 @@
           document.getElementById('col3-firma2').innerText = `${d.col3.nota2.autor || ''} | ${d.col3.nota2.lugar || ''}`;
         }
       })
-      .catch(err => {
-        console.error("Error cargando la portada:", err);
-      });
+      .catch(err => console.error("Error cargando portada:", err));
   </script>
 </body>
 </html>
