@@ -4,14 +4,20 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Eje Político</title>
+
+  <!-- META ETIQUETAS OPEN GRAPH DINÁMICAS PARA WHATSAPP -->
+  <meta id="og-title" property="og:title" content="Eje Político">
+  <meta id="og-desc" property="og:description" content="Información y análisis en Eje Político.">
+  <meta id="og-img" property="og:image" content="">
+  <meta property="og:type" content="article">
+
   <script src="https://cdn.tailwindcss.com"></script>
 </head>
 <body class="bg-[#FAF9F6] text-gray-900 font-sans min-h-screen">
 
-  <!-- Cabecera -->
   <header class="border-b border-gray-300 bg-white sticky top-0 z-50">
     <div class="max-w-7xl mx-auto px-4 py-2 flex justify-between items-center border-b border-gray-200 text-[10px] text-gray-500 uppercase tracking-widest font-serif">
-      <span id="fecha-actual"></span>
+      <span id="fecha-actual">Jueves, 20 de Agosto de 2026</span>
       <span class="font-bold text-red-700">Edición América</span>
     </div>
     <div class="text-center py-5 border-b border-gray-200">
@@ -21,23 +27,22 @@
     </div>
   </header>
 
-  <!-- Contenido Principal -->
   <main class="max-w-7xl mx-auto px-4 py-8">
     <div class="grid grid-cols-1 lg:grid-cols-12 gap-10">
       
-      <!-- COLUMNA PRINCIPAL DE LA NOTA (8 de 12) -->
       <article class="lg:col-span-8 bg-white p-6 md:p-8 border border-gray-200 shadow-sm">
         
-        <!-- 1. Volanta -->
+        <!-- Cartel de "ÚLTIMO MOMENTO" con asterisco giratorio -->
+        <div class="inline-flex items-center gap-2 bg-red-700 text-white px-3 py-1 text-xs font-bold uppercase tracking-wider mb-4">
+          <span class="text-base font-extrabold leading-none animate-spin">*</span>
+          <span>Último Momento</span>
+          <span class="w-2 h-2 rounded-full bg-white animate-ping ml-1"></span>
+        </div>
+
         <span id="nota-volanta" class="text-red-700 font-bold text-xs uppercase tracking-widest block mb-2"></span>
-        
-        <!-- 2. Título en letras grandes -->
         <h1 id="nota-titulo" class="font-serif text-4xl md:text-6xl font-bold text-gray-900 leading-tight mb-4"></h1>
-        
-        <!-- 3. Bajada de 3 oraciones -->
         <p id="nota-bajada" class="text-lg md:text-xl text-gray-600 font-serif leading-relaxed mb-6 border-b border-gray-200 pb-6"></p>
 
-        <!-- 4. Foto rectangular con epígrafe -->
         <div class="mb-6">
           <div class="relative aspect-[16/9] w-full overflow-hidden bg-gray-100 mb-2">
             <img id="nota-imagen" src="" alt="" class="w-full h-full object-cover">
@@ -45,42 +50,30 @@
           <figcaption id="nota-epigrafe" class="text-xs text-gray-500 font-serif italic border-l-2 border-red-700 pl-3 py-1"></figcaption>
         </div>
 
-        <!-- 5. Autor en MAYÚSCULAS + Lugar y Fecha abajo -->
         <div class="mb-4 text-xs tracking-wider">
           <p id="nota-autor" class="font-bold text-gray-900 uppercase"></p>
           <p id="nota-lugar-fecha" class="text-gray-500 font-serif italic mt-0.5"></p>
         </div>
 
-        <!-- 6. Enlaces con logos para Redes Sociales -->
+        <!-- Botones de Redes y Compartir por WhatsApp -->
         <div class="flex items-center space-x-6 border-y border-gray-200 py-3 mb-8 text-xs font-bold text-gray-600 uppercase tracking-wider">
           <span class="text-gray-400">Compartir:</span>
+          <a id="share-whatsapp" href="#" target="_blank" class="hover:text-green-600 flex items-center gap-1">
+            <svg class="w-4 h-4 fill-current text-green-600" viewBox="0 0 24 24"><path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-.999 3.648 3.742-.981z"/></svg> WhatsApp
+          </a>
           <a href="#" class="hover:text-black flex items-center gap-1">
             <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg> X
           </a>
-          <a href="#" class="hover:text-blue-600 flex items-center gap-1">
-            <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg> Facebook
-          </a>
-          <a href="#" class="hover:text-blue-800 flex items-center gap-1">
-            <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24"><path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/></svg> LinkedIn
-          </a>
         </div>
 
-        <!-- Cuerpo del Artículo -->
         <div id="nota-contenido" class="prose max-w-none text-gray-800 font-serif text-lg leading-relaxed space-y-6"></div>
 
-        <!-- 7. Panel de Comentarios -->
         <section class="mt-12 pt-8 border-t-2 border-black">
           <h3 class="font-serif text-2xl font-bold mb-6">Comentarios</h3>
           <div id="comentarios-list" class="space-y-4 mb-6"></div>
-
-          <form class="space-y-3" onsubmit="event.preventDefault();">
-            <textarea rows="3" placeholder="Escriba su comentario..." class="w-full p-3 text-sm border border-gray-300 focus:outline-none focus:border-black font-serif"></textarea>
-            <button type="submit" class="bg-black text-white text-xs uppercase tracking-wider font-semibold px-5 py-2.5 hover:bg-gray-800">Enviar comentario</button>
-          </form>
         </section>
       </article>
 
-      <!-- COLUMNA DERECHA: NOTAS NUEVAS (4 de 12) -->
       <aside class="lg:col-span-4 space-y-6">
         <div class="bg-white p-5 border border-gray-200 shadow-sm sticky top-24">
           <h3 class="font-serif text-lg font-bold text-gray-900 border-b-2 border-red-700 pb-2 mb-4 uppercase tracking-wide flex justify-between items-center">
@@ -111,24 +104,34 @@
         document.getElementById('fecha-actual').innerText = art.fecha;
         document.getElementById('nota-contenido').innerHTML = art.contenido;
 
-        // Cargar lista de comentarios
-        document.getElementById('comentarios-list').innerHTML = art.comentarios.map(c => `
-          <div class="bg-gray-50 p-4 border border-gray-200">
-            <div class="flex justify-between items-center mb-2">
-              <span class="font-bold text-sm text-gray-900">${c.usuario}</span>
-              <span class="text-xs text-gray-500">${c.fecha}</span>
-            </div>
-            <p class="text-sm text-gray-700 font-serif">${c.texto}</p>
-          </div>
-        `).join('');
+        // Configurar tarjeta para compartir por WhatsApp
+        document.getElementById('og-title').setAttribute('content', art.titulo);
+        document.getElementById('og-desc').setAttribute('content', art.bajada);
+        document.getElementById('og-img').setAttribute('content', art.imagen);
+        document.getElementById('share-whatsapp').href = `https://api.whatsapp.com/send?text=${encodeURIComponent(art.titulo + ' ' + window.location.href)}`;
 
-        // Cargar columna derecha con Notas Nuevas
-        document.getElementById('relacionadas-list').innerHTML = art.relacionadas.map(r => `
-          <a href="articulo.html" class="block py-3 group">
-            <span class="text-[10px] font-bold text-red-700 uppercase tracking-widest block mb-1">${r.categoria}</span>
-            <h4 class="font-serif text-sm font-bold text-gray-900 group-hover:text-red-700 leading-snug">${r.titulo}</h4>
-          </a>
-        `).join('');
+        // Cargar comentarios
+        if (art.comentarios) {
+          document.getElementById('comentarios-list').innerHTML = art.comentarios.map(c => `
+            <div class="bg-gray-50 p-4 border border-gray-200">
+              <div class="flex justify-between items-center mb-2">
+                <span class="font-bold text-sm text-gray-900">${c.usuario}</span>
+                <span class="text-xs text-gray-500">${c.fecha}</span>
+              </div>
+              <p class="text-sm text-gray-700 font-serif">${c.texto}</p>
+            </div>
+          `).join('');
+        }
+
+        // Cargar relacionadas
+        if (art.relacionadas) {
+          document.getElementById('relacionadas-list').innerHTML = art.relacionadas.map(r => `
+            <a href="articulo.html" class="block py-3 group">
+              <span class="text-[10px] font-bold text-red-700 uppercase tracking-widest block mb-1">${r.categoria}</span>
+              <h4 class="font-serif text-sm font-bold text-gray-900 group-hover:text-red-700 leading-snug">${r.titulo}</h4>
+            </a>
+          `).join('');
+        }
       });
   </script>
 </body>
