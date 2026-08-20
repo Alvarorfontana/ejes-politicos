@@ -33,25 +33,25 @@
     "col2": {
       "id": "1",
       "titulo": "El pasado oscuro de la guerra en Colombia emerge en los cementerios tras el terremoto",
-      "autor": "CINDY MORALES CASTILLO",
-      "lugar": "Bogotá",
-      "bajada": "La Unidad de Búsqueda ha recuperado dos esqueletos y nueve bolsas con ropa militar en el pueblo de Roldanillo.",
-      "imagen": "https://images.unsplash.com/photo-1540910419892-4a36d2c3266c?auto=format&fit=crop&w=1200&q=80",
-      "epigrafe": "La Unidad de Búsqueda de Personas Desaparecidas en Antioquia.",
-      "creditosFoto": "ANDRÉS CARDONA",
-      "vineta": "Documento clave contra la corrupción del régimen anterior"
+      "autor": "ALVARO",
+      "lugar": "Bogota",
+      "bajada": "una nota nuenva",
+      "imagen": "https://imagenes.noticiasrcn.com/cms/2026/08/12173255/cementerio-san-camilo-pereira.webp?r=4_3",
+      "epigrafe": "foto",
+      "creditosFoto": "",
+      "vineta": "Nota principal del día"
     },
     "col3": {
       "nota1": {
         "titulo": "La agonía cotidiana de vivir a oscuras en Venezuela",
         "autor": "FLORANTONIA SINGER",
         "lugar": "Caracas",
-        "bajada": "Los racionamientos de energía apagan los comercios y dejan a familias enteras atrapadas en la desolación.",
+        "bajada": "Los racionamientos de energía apagan los comercios.",
         "imagen": "https://images.unsplash.com/photo-1517048676732-d65bc937f952?auto=format&fit=crop&w=800&q=80",
-        "epigrafe": "Protestas en San Mateo, Venezuela."
+        "epigrafe": "Protestas en Venezuela."
       },
       "nota2": {
-        "titulo": "La Guaira se abraza al regreso del turismo para salir del colapso económico",
+        "titulo": "La Guaira se abraza al regreso del turismo",
         "autor": "MARCY ALEJANDRA RANGEL",
         "lugar": "Caracas"
       }
@@ -60,16 +60,16 @@
   "articles": [
     {
       "id": "1",
-      "volanta": "ANÁLISIS ESTRATÉGICO",
+      "volanta": "Colombia",
       "titulo": "El pasado oscuro de la guerra en Colombia emerge en los cementerios tras el terremoto",
-      "bajada": "La Unidad de Búsqueda ha recuperado dos esqueletos y nueve bolsas con ropa militar en el pueblo de Roldanillo. Las labores continuarán durante las próximas semanas en la zona afectada. Los familiares esperan respuestas definitivas sobre los hallazgos.",
-      "imagen": "https://images.unsplash.com/photo-1540910419892-4a36d2c3266c?auto=format&fit=crop&w=1200&q=80",
-      "epigrafe": "La Unidad de Búsqueda de Personas Desaparecidas en Antioquia.",
-      "autor": "CINDY MORALES CASTILLO",
-      "lugar": "BOGOTÁ",
+      "bajada": "una nota nuenva",
+      "imagen": "https://imagenes.noticiasrcn.com/cms/2026/08/12173255/cementerio-san-camilo-pereira.webp?r=4_3",
+      "epigrafe": "foto",
+      "autor": "ALVARO",
+      "lugar": "Bogota",
       "fecha": "20 de Agosto de 2026",
       "categoria": "Latinoamérica",
-      "contenido": "Las transformaciones recientes en la agenda parlamentaria han abierto un debate crucial sobre los equilibrios de representación.<br><br>Analistas de distintos sectores coinciden en que los próximos días serán determinantes para consolidar los acuerdos internacionales.",
+      "contenido": "lllllll",
       "relacionadas": [
         {
           "titulo": "Avanzan las cumbres bilaterales en el Sudeste Asiático",
@@ -84,7 +84,7 @@
         {
           "usuario": "Carlos G.",
           "fecha": "Hace 2 horas",
-          "texto": "Un análisis fundamental para comprender la dinámica regional."
+          "texto": "Excelente cobertura del escenario actual."
         }
       ]
     }
