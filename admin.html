@@ -1,1 +1,139 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Admin - Eje Político</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-gray-100 min-h-screen p-4 md:p-8 font-sans">
 
+  <div class="max-w-4xl mx-auto bg-white p-6 md:p-8 rounded-lg shadow-md border border-gray-200">
+    <div class="flex justify-between items-center border-b pb-4 mb-6">
+      <h1 class="text-2xl font-bold text-gray-900 font-serif">Gestor de Contenidos - Eje Político</h1>
+      <a href="index.html" target="_blank" class="text-xs font-semibold uppercase text-red-700 hover:underline">Ver Portada &rarr;</a>
+    </div>
+
+    <form id="article-form" class="space-y-6">
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+        <div>
+          <label class="block text-xs font-bold uppercase text-gray-700 mb-1">Volanta</label>
+          <input type="text" id="volanta" class="w-full p-2 border border-gray-300 text-sm focus:outline-none focus:border-black" placeholder="Ej: ANÁLISIS ESTRATÉGICO" required>
+        </div>
+        <div>
+          <label class="block text-xs font-bold uppercase text-gray-700 mb-1">Categoría</label>
+          <select id="categoria" class="w-full p-2 border border-gray-300 text-sm focus:outline-none focus:border-black">
+            <option>Europa</option>
+            <option>EE UU</option>
+            <option>México</option>
+            <option selected>Latinoamérica</option>
+            <option>Oriente</option>
+            <option>Asia</option>
+            <option>África</option>
+            <option>Historias de corresponsal</option>
+            <option>Últimas noticias</option>
+          </select>
+        </div>
+      </div>
+
+      <div>
+        <label class="block text-xs font-bold uppercase text-gray-700 mb-1">Título Principal</label>
+        <input type="text" id="titulo" class="w-full p-2 border border-gray-300 text-sm font-bold focus:outline-none focus:border-black" placeholder="Título de la nota..." required>
+      </div>
+
+      <div>
+        <label class="block text-xs font-bold uppercase text-gray-700 mb-1">Bajada / Copete</label>
+        <textarea id="bajada" rows="2" class="w-full p-2 border border-gray-300 text-sm focus:outline-none focus:border-black" placeholder="Resumen o bajada del artículo..." required></textarea>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+        <div>
+          <label class="block text-xs font-bold uppercase text-gray-700 mb-1">URL de la Imagen</label>
+          <input type="url" id="imagen" class="w-full p-2 border border-gray-300 text-sm focus:outline-none focus:border-black" placeholder="https://images.unsplash.com/..." required>
+        </div>
+        <div>
+          <label class="block text-xs font-bold uppercase text-gray-700 mb-1">Epígrafe de la Foto</label>
+          <input type="text" id="epigrafe" class="w-full p-2 border border-gray-300 text-sm focus:outline-none focus:border-black" placeholder="Pie de foto..." required>
+        </div>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+        <div>
+          <label class="block text-xs font-bold uppercase text-gray-700 mb-1">Autor</label>
+          <input type="text" id="autor" class="w-full p-2 border border-gray-300 text-sm focus:outline-none focus:border-black" value="Redacción Eje Político" required>
+        </div>
+        <div>
+          <label class="block text-xs font-bold uppercase text-gray-700 mb-1">Fecha</label>
+          <input type="text" id="fecha" class="w-full p-2 border border-gray-300 text-sm focus:outline-none focus:border-black" value="20 de Agosto de 2026" required>
+        </div>
+      </div>
+
+      <div>
+        <label class="block text-xs font-bold uppercase text-gray-700 mb-1">Cuerpo del Artículo (Usa &lt;br&gt;&lt;br&gt; para separar párrafos)</label>
+        <textarea id="contenido" rows="6" class="w-full p-2 border border-gray-300 text-sm font-serif focus:outline-none focus:border-black" placeholder="Escriba el contenido de la nota aquí..." required></textarea>
+      </div>
+
+      <button type="submit" class="w-full bg-black text-white font-bold uppercase text-xs py-3 tracking-wider hover:bg-gray-800 transition-colors">
+        Generar Código JSON para Publicar
+      </button>
+    </form>
+
+    <!-- Ventana de salida del JSON generado -->
+    <div id="output-container" class="mt-8 hidden border-t pt-6">
+      <h2 class="text-sm font-bold uppercase text-red-700 mb-2">¡Código Generado Exitosamente!</h2>
+      <p class="text-xs text-gray-600 mb-3">Copiá este texto y reemplazalo completo dentro de tu archivo <code class="bg-gray-200 px-1 font-bold">data.json</code> en GitHub:</p>
+      
+      <textarea id="json-output" rows="10" readonly class="w-full p-3 bg-gray-900 text-green-400 font-mono text-xs border border-gray-700 rounded focus:outline-none"></textarea>
+      
+      <button onclick="copiarJSON()" class="mt-3 bg-red-700 text-white font-bold uppercase text-xs px-4 py-2 hover:bg-red-800 transition-colors">
+        Copiar Código al Portapapeles
+      </button>
+    </div>
+  </div>
+
+  <script>
+    document.getElementById('article-form').addEventListener('submit', function(e) {
+      e.preventDefault();
+
+      const newArticle = {
+        id: "1",
+        volanta: document.getElementById('volanta').value,
+        titulo: document.getElementById('titulo').value,
+        bajada: document.getElementById('bajada').value,
+        imagen: document.getElementById('imagen').value,
+        epigrafe: document.getElementById('epigrafe').value,
+        autor: document.getElementById('autor').value,
+        fecha: document.getElementById('fecha').value,
+        categoria: document.getElementById('categoria').value,
+        contenido: document.getElementById('contenido').value,
+        relacionadas: [
+          { titulo: "Avanzan las cumbres bilaterales en el Sudeste Asiático", categoria: "Asia" },
+          { titulo: "Giro clave en las proyecciones económicas de América Latina", categoria: "Latinoamérica" }
+        ],
+        comentarios: [
+          { usuario: "Carlos G.", fecha: "Hace 2 horas", texto: "Un análisis clave para comprender los movimientos de esta semana." }
+        ]
+      };
+
+      const fullData = {
+        siteName: "Eje Político",
+        categories: [
+          "Europa", "EE UU", "México", "Latinoamérica", "Oriente", "Asia", "África", "Historias de corresponsal", "Últimas noticias"
+        ],
+        articles: [newArticle]
+      };
+
+      document.getElementById('json-output').value = JSON.stringify(fullData, null, 2);
+      document.getElementById('output-container').classList.remove('hidden');
+      window.scrollTo({ top: document.body.scrollHeight, behavior: 'smooth' });
+    });
+
+    function copiarJSON() {
+      const copyText = document.getElementById("json-output");
+      copyText.select();
+      document.execCommand("copy");
+      alert("¡Código JSON copiado! Ahora pégalo en tu archivo data.json en GitHub.");
+    }
+  </script>
+</body>
+</html>
