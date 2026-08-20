@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Eje Político</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-[#FAF9F6] text-gray-900 font-sans min-h-screen">
+
+  <header class="border-b border-gray-300 bg-white sticky top-0 z-50">
+    <div class="max-w-7xl mx-auto px-4 py-3 flex justify-between items-center border-b border-gray-200 text-xs text-gray-600 uppercase tracking-widest">
+      <span id="fecha-actual"></span>
+      <span class="font-semibold text-red-700">Edición Internacional</span>
+    </div>
+
+    <div class="text-center py-6 border-b border-gray-200">
+      <h1 id="site-name" class="font-serif text-4xl md:text-6xl tracking-tight font-black uppercase">Eje Político</h1>
+    </div>
+
+    <nav class="max-w-7xl mx-auto px-4 overflow-x-auto">
+      <ul id="categories-list" class="flex items-center justify-between md:justify-center space-x-6 py-3 text-xs md:text-sm font-semibold text-gray-800 whitespace-nowrap"></ul>
+    </nav>
+  </header>
+
+  <main class="max-w-7xl mx-auto px-4 py-8">
+    <div class="grid grid-cols-1 lg:grid-cols-12 gap-10">
+      <article class="lg:col-span-8 bg-white p-6 border border-gray-200 shadow-sm">
+        <a id="nota-link" href="articulo.html">
+          <div class="mb-6">
+            <div class="relative aspect-video w-full overflow-hidden bg-gray-100 mb-2">
+              <img id="nota-imagen" src="" alt="" class="w-full h-full object-cover">
+            </div>
+            <figcaption id="nota-epigrafe" class="text-xs text-gray-500 font-serif italic border-l-2 border-red-700 pl-3 py-1"></figcaption>
+          </div>
+
+          <header class="mb-6">
+            <span id="nota-volanta" class="text-red-700 font-bold text-xs uppercase tracking-widest block mb-2"></span>
+            <h2 id="nota-titulo" class="font-serif text-3xl md:text-5xl font-bold text-gray-900 leading-tight mb-4 hover:text-red-700 transition-colors"></h2>
+            <p id="nota-bajada" class="text-lg md:text-xl text-gray-600 font-serif leading-relaxed mb-6"></p>
+          </header>
+        </a>
+
+        <div class="mb-4 text-xs font-bold text-gray-900 uppercase tracking-wider">
+          Por <span id="nota-autor" class="underline decoration-red-700"></span>
+        </div>
+      </article>
+
+      <aside class="lg:col-span-4 space-y-8">
+        <div class="bg-white p-6 border border-gray-200 shadow-sm sticky top-24">
+          <h3 class="font-serif text-xl font-bold text-gray-900 border-b-2 border-red-700 pb-2 mb-4 uppercase tracking-wide">
+            Notas Vinculadas
+          </h3>
+          <div id="relacionadas-list" class="divide-y divide-gray-200"></div>
+        </div>
+      </aside>
+    </div>
+  </main>
+
+  <script>
+    fetch('data.json')
+      .then(res => res.json())
+      .then(data => {
+        document.getElementById('site-name').innerText = data.siteName;
+        document.getElementById('categories-list').innerHTML = data.categories.map(c => `<li><a href="#" class="hover:text-red-700 uppercase tracking-wider">${c}</a></li>`).join('');
+        
+        const art = data.articles[0];
+        document.getElementById('nota-imagen').src = art.imagen;
+        document.getElementById('nota-epigrafe').innerText = art.epigrafe;
+        document.getElementById('nota-volanta').innerText = art.volanta;
+        document.getElementById('nota-titulo').innerText = art.titulo;
+        document.getElementById('nota-bajada').innerText = art.bajada;
+        document.getElementById('nota-autor').innerText = art.autor;
+        document.getElementById('fecha-actual').innerText = art.fecha;
+
+        document.getElementById('relacionadas-list').innerHTML = art.relacionadas.map(r => `
+          <a href="articulo.html" class="block py-4 group">
+            <span class="text-xs font-bold text-red-700 uppercase tracking-widest block mb-1">${r.categoria}</span>
+            <h4 class="font-serif text-base font-bold text-gray-900 group-hover:text-red-700 leading-snug">${r.titulo}</h4>
+          </a>
+        `).join('');
+      });
+  </script>
+</body>
+</html>

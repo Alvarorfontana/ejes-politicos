@@ -1,0 +1,45 @@
+{
+  "siteName": "Eje Político",
+  "categories": [
+    "Europa",
+    "EE UU",
+    "México",
+    "Latinoamérica",
+    "Oriente",
+    "Asia",
+    "África",
+    "Historias de corresponsal",
+    "Últimas noticias"
+  ],
+  "articles": [
+    {
+      "id": "1",
+      "volanta": "ANÁLISIS ESTRATÉGICO",
+      "titulo": "Las fuerzas políticas buscan un pacto decisivo ante la nueva ley electoral",
+      "bajada": "Las negociaciones entran en su fase crítica mientras los bloques parlamentarios intentan definir los consensos clave sobre el sistema de representación.",
+      "imagen": "https://images.unsplash.com/photo-1540910419892-4a36d2c3266c?auto=format&fit=crop&w=1200&q=80",
+      "epigrafe": "Vista general de la sesión ordinaria en el hemiciclo durante la discusión del proyecto.",
+      "autor": "Redacción Eje Político",
+      "fecha": "20 de Agosto de 2026",
+      "categoria": "Latinoamérica",
+      "contenido": "Las transformaciones recientes en la agenda parlamentaria han abierto un debate crucial sobre los equilibrios de representación y la gobernabilidad a largo plazo.<br><br>Analistas de distintos sectores coinciden en que los próximos días serán determinantes para la conformación de mayorías y el avance de los proyectos clave.",
+      "relacionadas": [
+        {
+          "titulo": "Avanzan las cumbres bilaterales en el Sudeste Asiático",
+          "categoria": "Asia"
+        },
+        {
+          "titulo": "Giro clave en las proyecciones económicas de América Latina",
+          "categoria": "Latinoamérica"
+        }
+      ],
+      "comentarios": [
+        {
+          "usuario": "Carlos G.",
+          "fecha": "Hace 2 horas",
+          "texto": "Un análisis clave para comprender los movimientos de esta semana."
+        }
+      ]
+    }
+  ]
+}

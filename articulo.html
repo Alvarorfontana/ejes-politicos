@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Artículo - Eje Político</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-[#FAF9F6] text-gray-900 font-sans min-h-screen">
+
+  <header class="border-b border-gray-300 bg-white sticky top-0 z-50">
+    <div class="text-center py-6 border-b border-gray-200">
+      <a href="index.html" id="site-name" class="font-serif text-4xl md:text-6xl tracking-tight font-black uppercase">Eje Político</a>
+    </div>
+  </header>
+
+  <main class="max-w-4xl mx-auto px-4 py-8 bg-white my-6 border border-gray-200 shadow-sm">
+    <div class="mb-6">
+      <img id="nota-imagen" src="" alt="" class="w-full aspect-video object-cover mb-2">
+      <figcaption id="nota-epigrafe" class="text-xs text-gray-500 font-serif italic border-l-2 border-red-700 pl-3 py-1"></figcaption>
+    </div>
+
+    <span id="nota-volanta" class="text-red-700 font-bold text-xs uppercase tracking-widest block mb-2"></span>
+    <h1 id="nota-titulo" class="font-serif text-3xl md:text-5xl font-bold text-gray-900 leading-tight mb-4"></h1>
+    <p id="nota-bajada" class="text-lg md:text-xl text-gray-600 font-serif leading-relaxed mb-6"></p>
+
+    <div class="flex items-center justify-between border-y border-gray-200 py-3 mb-6 text-xs font-bold text-gray-600 uppercase tracking-wider">
+      <span>Por <span id="nota-autor" class="underline decoration-red-700"></span></span>
+      <span id="nota-fecha"></span>
+    </div>
+
+    <div id="nota-contenido" class="prose max-w-none text-gray-800 font-serif text-lg leading-relaxed space-y-6"></div>
+
+    <section class="mt-12 pt-8 border-t-2 border-black">
+      <h3 class="font-serif text-2xl font-bold mb-6">Comentarios</h3>
+      <div id="comentarios-list" class="space-y-4 mb-6"></div>
+    </section>
+  </main>
+
+  <script>
+    fetch('data.json')
+      .then(res => res.json())
+      .then(data => {
+        const art = data.articles[0];
+        document.getElementById('nota-imagen').src = art.imagen;
+        document.getElementById('nota-epigrafe').innerText = art.epigrafe;
+        document.getElementById('nota-volanta').innerText = art.volanta;
+        document.getElementById('nota-titulo').innerText = art.titulo;
+        document.getElementById('nota-bajada').innerText = art.bajada;
+        document.getElementById('nota-autor').innerText = art.autor;
+        document.getElementById('nota-fecha').innerText = art.fecha;
+        document.getElementById('nota-contenido').innerHTML = art.contenido;
+
+        document.getElementById('comentarios-list').innerHTML = art.comentarios.map(c => `
+          <div class="bg-gray-50 p-4 border border-gray-200">
+            <div class="flex justify-between items-center mb-2">
+              <span class="font-bold text-sm text-gray-900">${c.usuario}</span>
+              <span class="text-xs text-gray-500">${c.fecha}</span>
+            </div>
+            <p class="text-sm text-gray-700 font-serif">${c.texto}</p>
+          </div>
+        `).join('');
+      });
+  </script>
+</body>
+</html>
