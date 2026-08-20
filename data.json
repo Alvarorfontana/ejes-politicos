@@ -16,10 +16,11 @@
       "id": "1",
       "volanta": "ANÁLISIS ESTRATÉGICO",
       "titulo": "Las fuerzas políticas buscan un pacto decisivo ante la nueva ley electoral",
-      "bajada": "Las negociaciones entran en su fase crítica mientras los bloques parlamentarios intentan definir los consensos clave sobre el sistema de representación.",
+      "bajada": "Las negociaciones entran en su fase crítica mientras los bloques parlamentarios intentan definir los consensos clave sobre el sistema de representación. Los analistas prevén jornadas intensas en el poder legislativo antes de la votación definitiva. El impacto de este acuerdo redefinirá el escenario político regional durante el próximo lustro.",
       "imagen": "https://images.unsplash.com/photo-1540910419892-4a36d2c3266c?auto=format&fit=crop&w=1200&q=80",
-      "epigrafe": "Vista general de la sesión ordinaria en el hemiciclo durante la discusión del proyecto.",
+      "epigrafe": "Vista general de la sesión ordinaria en el hemiciclo durante la discusión del proyecto legislativo.",
       "autor": "Redacción Eje Político",
+      "lugar": "BUENOS AIRES",
       "fecha": "20 de Agosto de 2026",
       "categoria": "Latinoamérica",
       "contenido": "Las transformaciones recientes en la agenda parlamentaria han abierto un debate crucial sobre los equilibrios de representación y la gobernabilidad a largo plazo.<br><br>Analistas de distintos sectores coinciden en que los próximos días serán determinantes para la conformación de mayorías y el avance de los proyectos clave.",
@@ -31,13 +32,17 @@
         {
           "titulo": "Giro clave en las proyecciones económicas de América Latina",
           "categoria": "Latinoamérica"
+        },
+        {
+          "titulo": "Nuevas medidas para dinamizar el comercio transfronterizo",
+          "categoria": "Europa"
         }
       ],
       "comentarios": [
         {
           "usuario": "Carlos G.",
           "fecha": "Hace 2 horas",
-          "texto": "Un análisis clave para comprender los movimientos de esta semana."
+          "texto": "Un análisis fundamental para comprender la dinámica de los consensos parlamentarios."
         }
       ]
     }
